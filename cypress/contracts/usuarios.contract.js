@@ -1,6 +1,6 @@
 const Joi = require('joi')
 
-const usuariosSchema = Joi.objects({
+const usuariosSchema = Joi.object({
     quantidade: Joi.number(),
     usuarios: Joi.array().items({
         nome: Joi.string(),

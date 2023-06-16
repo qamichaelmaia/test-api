@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-//import contrato from '../contracts/usuarios.contract' //ERRO NO COMANDO DE VALIDAÇÃO DE CONTRATO DE USUARIO
+import contrato from '../contracts/usuarios.contract'
 
 var faker = require('faker');
 
@@ -23,7 +23,7 @@ describe('Testes da Funcionalidade Usuários', () => {
                expect(response.status).to.equal(200)
                expect(response.body).to.have.property('usuarios')
                expect(response.duration).to.have.below(30)
-          })) ///OK
+          }))
      });
 
      it('Deve cadastrar um usuário com sucesso', () => {
@@ -42,7 +42,7 @@ describe('Testes da Funcionalidade Usuários', () => {
           }).then((response) => {
                expect(response.status).to.equal(201)
                expect(response.body.message).to.equal('Cadastro realizado com sucesso')
-          })///OK
+          })
      });
 
      it('Deve validar um usuário com email inválido', () => {
@@ -50,7 +50,7 @@ describe('Testes da Funcionalidade Usuários', () => {
                .then((response) => {
                     expect(response.status).to.equal(400)
                     expect(response.body.message).to.equal('Este email já está sendo usado')
-               })///OK
+               })
      });
 
      it('Deve editar um usuário previamente cadastrado', () => {
