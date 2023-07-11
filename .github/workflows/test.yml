@@ -3,7 +3,7 @@ name: EBAC CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, gh-pages ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
